@@ -1,0 +1,6 @@
+---
+- name: install 
+  package:
+    name: "{{ apache_pkg }}"
+    state: latest
+  notify: Start Apache

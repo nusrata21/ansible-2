@@ -1,0 +1,14 @@
+---
+- name: install/start
+  hosts: all
+  become: true
+  tasks:
+  - name: install httpd
+    package:
+      name: "{{ apache_pkg }}"
+      state: latest
+  - name: start/enable
+    service:
+      name: "{{ apache_srv }}"
+      state: started
+      enabled: true
