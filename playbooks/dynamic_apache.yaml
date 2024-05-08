@@ -1,0 +1,7 @@
+---
+- name: install apache and start/enable
+  hosts: webservers
+  become: true
+  roles:
+  - install_apache
+  - copy_doc_root
